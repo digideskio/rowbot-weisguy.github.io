@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Fresh Blog</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="/assets/favicon.png" rel="shortcut icon">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Typekit -->
+    <script>
+        (function(d) {
+            var tkTimeout=3000;
+            if(window.sessionStorage){if(sessionStorage.getItem('useTypekit')==='false'){tkTimeout=0;}}
+                var config = {
+                  kitId: 'twt3aky',
+                  scriptTimeout: tkTimeout
+                },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+"wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+="wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
+</head>
+
+    <body class="layout">
+        <header class="header layout__header">
+    <a href="/" class="logo">
+        <span class="logo__initial" aria-hidden="true">R</span>
+        <span class="sr-only">Rowan Weismiller</span>
+    </a>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a class="nav__link link" href="/">Blog</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link link" href="/about/">About</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main class="content layout__content">
+            
+            <article class="main ">
+                <div class="opening">
+    <h1 class="opening__title">Fresh Blog</h1>
+    <p class="opening__meta">Posted on 10 May 2016</p>
+</div>
+
+<div class="post">
+    <p>Do you smell that?</p>
+
+<p>Neither do I. It&rsquo;s all fresh in here. I made a new site for myself!</p>
+
+<p>Welcome. 👋</p>
+
+<p>This time around it&rsquo;s going to be a little more straightforward.
+I want a place that doesn&rsquo;t suck to write thoughts. A place that
+doesn&rsquo;t care about favourites or likes.</p>
+
+<p>The past few months I feel like I&rsquo;ve just floated along on social media
+like a cloud. I was sad with it and felt anonymous most of the time.</p>
+
+<p>So I shrank for a while. 🍂</p>
+
+<p>Time to grow, and to share ideas that nourish me. 🌳 That&rsquo;s my one promise at
+the outset of this thing.</p>
+
+<p>Oh, and I&rsquo;ll add some short case studies on the work I&rsquo;ve done in
+the past couple years. I&rsquo;ve been a bit lazy about that. 🙈</p>
+
+<p>If I could ask one thing of you: please share back. I put comments on this site
+so that if what I write reminds you of something, you can share it here too.</p>
+
+<p>Anyway, hope you&rsquo;re having a good day! See you around.</p>
+
+    
+
+    <div class="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//rowanweismiller.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
+            </article>
+            <footer class="footer">
+    <h3 class="footer__header">Browse Around</h3>
+    <p class="footer__links">
+        <a class="link" href="/">Blog</a>
+        / <a class="link" href="/about/">About</a>
+    </p>
+    <h3 class="footer__header">Rowan Around the Internets</h3>
+    <p class="footer__links">
+        <a class="link" href="mailto:rowan.weismiller@gmail.com">Email</a>
+        / <a class="link" href="//github.com/rowbot-weisguy">GitHub</a>
+        / <a class="link" href="//twitter.com/rowbot_weisguy">Twitter</a>
+        / <a class="link" href="//ca.linkedin.com/in/rowanweismiller">LinkedIn</a>
+        / <a class="link" href="//thenachoclub.com/">The Nacho Club</a>
+    </p>
+    <p class="footer__message">
+        Powered by nachos in Vancouver, Canada
+    </p>
+</footer>
+
+        </main>
+        <script src="/assets/js/main.js"></script>
+
+    </body>
+</html>
