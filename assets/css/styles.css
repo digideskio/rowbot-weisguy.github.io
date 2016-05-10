@@ -959,7 +959,7 @@ blockquote {
   font-size: 1.2rem; }
 
 .footer__links {
-  margin-bottom: 4rem; }
+  margin-bottom: 2rem; }
 
 .logo {
   position: relative;
@@ -992,26 +992,29 @@ blockquote {
     content: "";
     z-index: 1;
     border-radius: 50%;
-    transition: -webkit-transform 0.2s ease-out, border-radius 0.2s ease-out;
-    transition: transform 0.2s ease-out, border-radius 0.2s ease-out; }
+    transition: -webkit-transform 0.2s ease-in;
+    transition: transform 0.2s ease-in; }
   .logo:before {
-    -webkit-transform: translate(-4%, -4%);
-            transform: translate(-4%, -4%);
+    -webkit-transform: translate(-8%, -8%);
+            transform: translate(-8%, -8%);
     background-color: #399bff;
     mix-blend-mode: multiply; }
   .logo:after {
-    -webkit-transform: translate(4%, 4%);
-            transform: translate(4%, 4%);
+    -webkit-transform: translate(8%, 8%);
+            transform: translate(8%, 8%);
     background-color: #f34b30;
     mix-blend-mode: multiply; }
   .logo:hover {
     color: #FFFFFF; }
+    .logo:hover:before, .logo:hover:after {
+      transition: -webkit-transform 0.1s ease-out;
+      transition: transform 0.1s ease-out; }
     .logo:hover:before {
-      -webkit-transform: translate(4%, 4%);
-              transform: translate(4%, 4%); }
+      -webkit-transform: translate(2%, 2%);
+              transform: translate(2%, 2%); }
     .logo:hover:after {
-      -webkit-transform: translate(-4%, -4%);
-              transform: translate(-4%, -4%); }
+      -webkit-transform: translate(-2%, -2%);
+              transform: translate(-2%, -2%); }
 
 .logo__initial {
   position: relative;
@@ -1134,9 +1137,9 @@ blockquote {
   color: #767676;
   font-size: 1.4rem; }
 
-.link {
+.link, .main a {
   position: relative; }
-  .link:after {
+  .link:after, .main a:after {
     position: absolute;
     bottom: -1px;
     left: 0;
@@ -1150,7 +1153,7 @@ blockquote {
             transform: translateY(3px);
     transition: background-color 0.3s ease-in, -webkit-transform 0.3s ease-in;
     transition: background-color 0.3s ease-in, transform 0.3s ease-in; }
-  .link:hover:after, .link:focus:after {
+  .link:hover:after, .main a:hover:after, .link:focus:after, .main a:focus:after {
     transition: background-color 0.1s ease-out, -webkit-transform 0.1s ease-out;
     transition: background-color 0.1s ease-out, transform 0.1s ease-out;
     background-color: #0681ff;
