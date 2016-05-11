@@ -773,7 +773,6 @@ body {
   background-color: #F9F9F9; }
 
 a {
-  display: inline-block;
   color: #399BFF;
   text-decoration: none;
   transition: color 0.3s ease-in; }
@@ -889,6 +888,12 @@ blockquote {
     font-size: 2.4rem;
     line-height: 1.2;
     margin-bottom: 0; }
+
+hr {
+  border-color: #DDDDDD;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  margin: 4rem 0; }
 
 .lead {
   font-size: 2rem;
@@ -1137,9 +1142,10 @@ blockquote {
   color: #767676;
   font-size: 1.4rem; }
 
-.link, .main a {
-  position: relative; }
-  .link:after, .main a:after {
+.link {
+  position: relative;
+  display: inline-block; }
+  .link:after {
     position: absolute;
     bottom: -1px;
     left: 0;
@@ -1153,7 +1159,7 @@ blockquote {
             transform: translateY(3px);
     transition: background-color 0.3s ease-in, -webkit-transform 0.3s ease-in;
     transition: background-color 0.3s ease-in, transform 0.3s ease-in; }
-  .link:hover:after, .main a:hover:after, .link:focus:after, .main a:focus:after {
+  .link:hover:after, .link:focus:after {
     transition: background-color 0.1s ease-out, -webkit-transform 0.1s ease-out;
     transition: background-color 0.1s ease-out, transform 0.1s ease-out;
     background-color: #0681ff;
