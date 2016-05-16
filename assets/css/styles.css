@@ -1,6 +1,6 @@
 /* =========================================================================*|* rowanweismiller.com                                                      *|
 \* =========================================================================*/
-@-webkit-keyframes shift-background {
+@-webkit-keyframes rainbow-background {
   0% {
     background-color: #008080; }
   25% {
@@ -11,7 +11,7 @@
     background-color: #CCAE14; }
   100% {
     background-color: #008080; } }
-@keyframes shift-background {
+@keyframes rainbow-background {
   0% {
     background-color: #008080; }
   25% {
@@ -23,7 +23,31 @@
   100% {
     background-color: #008080; } }
 
-@-webkit-keyframes shift-foreground {
+@-webkit-keyframes rainbow-background-offset {
+  0% {
+    background-color: #00FFFF; }
+  25% {
+    background-color: #CCAE14; }
+  50% {
+    background-color: #008080; }
+  75% {
+    background-color: #FF19C2; }
+  100% {
+    background-color: #00FFFF; } }
+
+@keyframes rainbow-background-offset {
+  0% {
+    background-color: #00FFFF; }
+  25% {
+    background-color: #CCAE14; }
+  50% {
+    background-color: #008080; }
+  75% {
+    background-color: #FF19C2; }
+  100% {
+    background-color: #00FFFF; } }
+
+@-webkit-keyframes rainbow-foreground {
   0% {
     color: #008080; }
   25% {
@@ -35,7 +59,7 @@
   100% {
     color: #008080; } }
 
-@keyframes shift-foreground {
+@keyframes rainbow-foreground {
   0% {
     color: #008080; }
   25% {
@@ -132,6 +156,72 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1); } }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes logo-pulse {
+  0% {
+    -webkit-transform: translate(8%, 8%);
+            transform: translate(8%, 8%); }
+  50% {
+    -webkit-transform: translate(-8%, -8%);
+            transform: translate(-8%, -8%); }
+  100% {
+    -webkit-transform: translate(8%, 8%);
+            transform: translate(8%, 8%); } }
+
+@keyframes logo-pulse {
+  0% {
+    -webkit-transform: translate(8%, 8%);
+            transform: translate(8%, 8%); }
+  50% {
+    -webkit-transform: translate(-8%, -8%);
+            transform: translate(-8%, -8%); }
+  100% {
+    -webkit-transform: translate(8%, 8%);
+            transform: translate(8%, 8%); } }
+
+@-webkit-keyframes logo-pulse-reverse {
+  0% {
+    -webkit-transform: translate(-8%, -8%);
+            transform: translate(-8%, -8%); }
+  50% {
+    -webkit-transform: translate(8%, 8%);
+            transform: translate(8%, 8%); }
+  100% {
+    -webkit-transform: translate(-8%, -8%);
+            transform: translate(-8%, -8%); } }
+
+@keyframes logo-pulse-reverse {
+  0% {
+    -webkit-transform: translate(-8%, -8%);
+            transform: translate(-8%, -8%); }
+  50% {
+    -webkit-transform: translate(8%, 8%);
+            transform: translate(8%, 8%); }
+  100% {
+    -webkit-transform: translate(-8%, -8%);
+            transform: translate(-8%, -8%); } }
 
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -910,7 +1000,6 @@ hr {
           flex-direction: row; } }
 
 .layout__header {
-  padding: 1rem;
   -ms-flex: 0 0 6rem;
       flex: 0 0 6rem; }
   @media only screen and (min-width: 60em) {
@@ -932,21 +1021,31 @@ hr {
   z-index: 1;
   display: -ms-flexbox;
   display: flex;
+  padding: 1rem;
   -ms-flex-direction: row;
       flex-direction: row;
   -ms-flex-align: center;
       align-items: center;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2); }
   @media only screen and (min-width: 60em) {
     .header {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
       -ms-flex-direction: column;
           flex-direction: column;
       -ms-flex-pack: start;
           justify-content: flex-start;
       box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.2); } }
+
+.header__actions {
+  margin-left: 1rem; }
+  @media only screen and (min-width: 60em) {
+    .header__actions {
+      margin-left: 0;
+      margin-top: auto; } }
 
 .footer {
   padding: 4rem 2rem 4rem;
@@ -976,17 +1075,25 @@ hr {
       justify-content: center;
   width: 6rem;
   height: 6rem;
-  margin: 0;
-  color: #FFFFFF;
+  margin: 0 auto 0 0;
   font-size: 3rem;
   font-weight: 600; }
   @media only screen and (min-width: 60em) {
     .logo {
-      margin: 4rem auto;
+      margin: 0 auto 4rem;
       height: 12rem;
       width: 12rem;
       font-size: 6rem; } }
-  .logo:before, .logo:after {
+
+.logo__effects {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+  .logo__effects:before, .logo__effects:after {
     position: absolute;
     top: 0;
     right: 0;
@@ -997,43 +1104,49 @@ hr {
     content: "";
     z-index: 1;
     border-radius: 50%;
-    transition: -webkit-transform 0.2s ease-in;
-    transition: transform 0.2s ease-in; }
-  .logo:before {
+    mix-blend-mode: multiply; }
+  .logo__effects:before {
     -webkit-transform: translate(-8%, -8%);
             transform: translate(-8%, -8%);
-    background-color: #399bff;
-    mix-blend-mode: multiply; }
-  .logo:after {
+    background-color: #399bff; }
+  .logo__effects:after {
     -webkit-transform: translate(8%, 8%);
             transform: translate(8%, 8%);
-    background-color: #f34b30;
-    mix-blend-mode: multiply; }
-  .logo:hover {
-    color: #FFFFFF; }
-    .logo:hover:before, .logo:hover:after {
-      transition: -webkit-transform 0.1s ease-out;
-      transition: transform 0.1s ease-out; }
-    .logo:hover:before {
-      -webkit-transform: translate(2%, 2%);
-              transform: translate(2%, 2%); }
-    .logo:hover:after {
-      -webkit-transform: translate(-2%, -2%);
-              transform: translate(-2%, -2%); }
+    background-color: #f34b30; }
+  .logo:hover .logo__effects {
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+    .logo:hover .logo__effects:before, .logo:hover .logo__effects:after {
+      transition: -webkit-transform 0.3s ease-out;
+      transition: transform 0.3s ease-out; }
+    .logo:hover .logo__effects:before {
+      -webkit-transform: translate(8%, 8%);
+              transform: translate(8%, 8%); }
+    .logo:hover .logo__effects:after {
+      -webkit-transform: translate(-8%, -8%);
+              transform: translate(-8%, -8%); }
 
 .logo__initial {
+  color: #FFFFFF;
   position: relative;
   z-index: 2;
   display: block;
   vertical-align: middle; }
 
-.nav {
+.logo__party {
   position: relative;
-  left: 1rem; }
-  @media only screen and (min-width: 60em) {
-    .nav {
-      left: auto;
-      text-align: center; } }
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 95%;
+  height: 95%; }
+
+@media only screen and (min-width: 60em) {
+  .nav {
+    text-align: center; } }
 
 .nav__list {
   padding: 0;
@@ -1051,6 +1164,30 @@ hr {
 .nav__link {
   display: block;
   font-size: 1.6rem; }
+
+.button {
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: #399BFF;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in -webkit-transform 0.3s ease-in;
+  transition: background 0.3s ease-in transform 0.3s ease-in; }
+  .button:hover {
+    background-color: #0681ff;
+    -webkit-transform: scale(1.02) translateY(-1px);
+            transform: scale(1.02) translateY(-1px);
+    transition: background 0.2s ease-out -webkit-transform 0.2s ease-out;
+    transition: background 0.2s ease-out transform 0.2s ease-out; }
+  .button:active {
+    transition: none;
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0); }
 
 .posts {
   list-style-type: none;
@@ -1129,13 +1266,18 @@ hr {
 
 .card__text {
   -ms-flex-positive: 1;
-      flex-grow: 1; }
+      flex-grow: 1;
+  overflow: hidden; }
 
 .card__title {
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #399BFF;
   font-size: 1.6rem;
-  font-weight: 300; }
+  font-weight: 300;
+  line-height: 1.3; }
 
 .card__subtitle {
   display: block;
@@ -1154,7 +1296,8 @@ hr {
     display: block;
     width: 100%;
     height: 1px;
-    background-color: rgba(6, 129, 255, 0);
+    background-color: #0681ff;
+    opacity: 0;
     -webkit-transform: translateY(3px);
             transform: translateY(3px);
     transition: background-color 0.3s ease-in, -webkit-transform 0.3s ease-in;
@@ -1163,6 +1306,7 @@ hr {
     transition: background-color 0.1s ease-out, -webkit-transform 0.1s ease-out;
     transition: background-color 0.1s ease-out, transform 0.1s ease-out;
     background-color: #0681ff;
+    opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0); }
 
@@ -1250,6 +1394,35 @@ hr {
   left: 0;
   width: 100%;
   height: 100%; }
+
+.party.is-lit {
+  background-color: #333333;
+  color: #FFFFFF; }
+  .party.is-lit .header {
+    background-color: #000000; }
+  .party.is-lit a:not(.logo),
+  .party.is-lit .card__title {
+    -webkit-animation: 1s rainbow-foreground linear infinite;
+            animation: 1s rainbow-foreground linear infinite; }
+  .party.is-lit .link:after,
+  .party.is-lit .button {
+    -webkit-animation: 1s rainbow-background linear infinite;
+            animation: 1s rainbow-background linear infinite; }
+  .party.is-lit .logo__effects {
+    -webkit-animation: 2s spin linear infinite;
+            animation: 2s spin linear infinite; }
+    .party.is-lit .logo__effects::before, .party.is-lit .logo__effects::after {
+      mix-blend-mode: normal; }
+    .party.is-lit .logo__effects:before {
+      -webkit-animation: 1s logo-pulse linear infinite;
+              animation: 1s logo-pulse linear infinite; }
+    .party.is-lit .logo__effects:after {
+      -webkit-animation: 1s logo-pulse-reverse linear infinite;
+              animation: 1s logo-pulse-reverse linear infinite; }
+  .party.is-lit .logo__initial {
+    display: none; }
+  .party.is-lit .logo__party {
+    display: block; }
 
 .sr-only {
   position: absolute;

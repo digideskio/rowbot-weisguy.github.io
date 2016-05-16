@@ -42,6 +42,8 @@
         <header class="header layout__header">
     <a href="/" class="logo">
         <span class="logo__initial" aria-hidden="true">R</span>
+        <span class="logo__effects" aria-hidden="true"></span>
+        <span class="logo__party" aria-hidden="true"><img src="/assets/images/rowan-party.gif"/></span>
         <span class="sr-only">Rowan Weismiller</span>
     </a>
     <nav class="nav">
@@ -54,6 +56,10 @@
             </li>
         </ul>
     </nav>
+    <div class="header__actions">
+        <button class="button js-party-button">Party</button>
+        <audio class="js-party-music" src="/assets/sounds/sandstorm.mp3"></audio>
+    </div>
 </header>
         <main class="content layout__content">
             
@@ -73,7 +79,7 @@
                         🛠
                     </div>
                     <div class="card__text">
-                        <h3 class="card__title">Joining Bench!</h3>
+                        <h3 class="card__title">Good news everyone!</h3>
                         <span class="card__subtitle">14 May 2016</span>
                     </div>
                 </a>
@@ -167,7 +173,7 @@
         / <a class="link" href="//ca.linkedin.com/in/rowanweismiller">LinkedIn</a>
         / <a class="link" href="//thenachoclub.com/">The Nacho Club</a>
     </p>
-    <p class="footer__message">
+    <p class="footer__message js-super-party-button">
         Powered by nachos in Vancouver, Canada
     </p>
 </footer>
