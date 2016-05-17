@@ -1041,6 +1041,8 @@ hr {
       box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.2); } }
 
 .header__actions {
+  -ms-flex-positive: 0;
+      flex-grow: 0;
   margin-left: 1rem; }
   @media only screen and (min-width: 60em) {
     .header__actions {
@@ -1172,6 +1174,7 @@ hr {
   background-color: #399BFF;
   color: #FFFFFF;
   font-size: 1.2rem;
+  line-height: 2rem;
   text-transform: uppercase;
   font-weight: bold;
   -webkit-appearance: none;
@@ -1384,7 +1387,7 @@ hr {
   padding-bottom: 56.25%;
   padding-top: 25px;
   height: 0;
-  margin: 1rem 0; }
+  margin: 2rem 0; }
 
 .video iframe {
   position: absolute;
@@ -1400,6 +1403,16 @@ hr {
   color: #FFFFFF; }
   .party.is-lit .header {
     background-color: #000000; }
+    @media only screen and (max-width: 60em) {
+      .party.is-lit .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6rem; } }
+  @media only screen and (max-width: 60em) {
+    .party.is-lit .content {
+      margin-top: 6rem; } }
   .party.is-lit a:not(.logo),
   .party.is-lit .card__title {
     -webkit-animation: 1s rainbow-foreground linear infinite;
