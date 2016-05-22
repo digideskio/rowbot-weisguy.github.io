@@ -1346,12 +1346,12 @@ hr {
       flex-grow: 1;
   color: #444444; }
 
-.author__subtext,
+.author__date,
 .author__name,
 .author__bio {
   margin-bottom: 0; }
 
-.author__subtext {
+.author__date {
   color: #767676;
   font-size: 1.4rem;
   font-style: italic; }
@@ -1413,10 +1413,17 @@ hr {
   @media only screen and (max-width: 60em) {
     .party.is-lit .content {
       margin-top: 6rem; } }
+  .party.is-lit .card {
+    background-color: #666666; }
+  .party.is-lit .card__subtitle {
+    color: #FFFFFF; }
   .party.is-lit a:not(.logo),
   .party.is-lit .card__title {
     -webkit-animation: 1s rainbow-foreground linear infinite;
             animation: 1s rainbow-foreground linear infinite; }
+  .party.is-lit .author__text,
+  .party.is-lit .author__date {
+    color: #DDDDDD; }
   .party.is-lit .link:after,
   .party.is-lit .button {
     -webkit-animation: 1s rainbow-background linear infinite;
