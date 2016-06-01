@@ -71,27 +71,7 @@
   100% {
     color: #008080; } }
 
-@-webkit-keyframes fade-in-up {
-  from {
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-    opacity: 0; }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1; } }
-
-@keyframes fade-in-up {
-  from {
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-    opacity: 0; }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1; } }
-
-@-webkit-keyframes fade-out-down {
+@-webkit-keyframes fade-out-to-bottom {
   from {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -101,7 +81,7 @@
             transform: translateY(50px);
     opacity: 0; } }
 
-@keyframes fade-out-down {
+@keyframes fade-out-to-bottom {
   from {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -110,6 +90,66 @@
     -webkit-transform: translateY(50px);
             transform: translateY(50px);
     opacity: 0; } }
+
+@-webkit-keyframes fade-in-from-top {
+  from {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes fade-in-from-top {
+  from {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1; } }
+
+@-webkit-keyframes fade-out-to-right {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; }
+  to {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0; } }
+
+@keyframes fade-out-to-right {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; }
+  to {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0; } }
+
+@-webkit-keyframes fade-in-from-left {
+  from {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes fade-in-from-left {
+  from {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; } }
 
 @-webkit-keyframes fade-in-bg {
   from {
@@ -848,10 +888,6 @@ textarea {
 *::after {
   box-sizing: border-box; }
 
-html,
-body {
-  height: 100%; }
-
 html {
   padding: 0;
   margin: 0; }
@@ -861,6 +897,8 @@ body {
   margin: 0;
   color: #333333;
   background-color: #F9F9F9; }
+  body.is-loading {
+    overflow: hidden; }
 
 a {
   color: #399BFF;
@@ -997,7 +1035,8 @@ hr {
   @media only screen and (min-width: 60em) {
     .layout {
       -ms-flex-direction: row;
-          flex-direction: row; } }
+          flex-direction: row;
+      overflow: hidden; } }
 
 .layout__header {
   -ms-flex: 0 0 6rem;
@@ -1397,6 +1436,22 @@ hr {
   left: 0;
   width: 100%;
   height: 100%; }
+
+.is-loaded .content {
+  -webkit-animation: 0.3s fade-in-from-top ease-out forwards;
+          animation: 0.3s fade-in-from-top ease-out forwards; }
+  @media only screen and (min-width: 60em) {
+    .is-loaded .content {
+      -webkit-animation: 0.3s fade-in-from-left ease-out forwards;
+              animation: 0.3s fade-in-from-left ease-out forwards; } }
+
+.is-loading .content {
+  -webkit-animation: 0.3s fade-out-to-bottom ease-out forwards;
+          animation: 0.3s fade-out-to-bottom ease-out forwards; }
+  @media only screen and (min-width: 60em) {
+    .is-loading .content {
+      -webkit-animation: 0.3s fade-out-to-right ease-out forwards;
+              animation: 0.3s fade-out-to-right ease-out forwards; } }
 
 .party.is-lit {
   background-color: #333333;
