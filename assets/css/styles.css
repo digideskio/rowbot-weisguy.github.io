@@ -888,6 +888,10 @@ textarea {
 *::after {
   box-sizing: border-box; }
 
+html,
+body {
+  height: 100%; }
+
 html {
   padding: 0;
   margin: 0; }
